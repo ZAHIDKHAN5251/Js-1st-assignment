@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 5</title>
+    <style>
+         *{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+  }
+
+  div{
+    width: 200px;
+    height: 300px;
+    display: flex; 
+    flex-direction: column;
+      margin-left: 100px;
+/*    justify-content: center;align-items: center;*/
+  }
+
+  input {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+
+/* General Buttons */
+button {
+  width: 150px;
+  height: 40px;
+  background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  border-bottom: 4px solid #2b8bc6;
+  color: #fbfbfb;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+  font-size: 15px;
+  text-align: left;
+  text-indent: 5px;
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+  cursor: pointer;
+
+/* Just for presentation */  
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+button:active {
+  box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+  top: 1px;
+}
+
+button:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 20px solid #187dbc;
+  border-bottom: 20px solid #187dbc;
+  border-left: 16px solid transparent;
+  border-right: 20px solid #187dbc;
+  position: absolute;
+  opacity: 0.6; 
+  right: 0;
+  top: 0;
+  border-radius: 0 5px 5px 0;  
+}
+        .btn{
+            text-align: left;
+            color: aqua;
+            margin-left: 50px;
+        }
+  @media(max-width: 768px){
+    h1{ font-size: 1.2rem; }
+  }
+        
+        h1{
+            color: orange;
+            text-decoration-style: solid;
+            margin-left: 5px;
+        }
+        p{
+            color: blue;
+            font-family: sans-serif;
+            font-style: italic;
+            font-size: 15px;
+        }
+        .qaunt{
+            color: red;
+            font-size: bold;
+        }
+        .submit{
+            background: aqua;
+            text-align: left;
+            margin-left: 64px;
+        }
+        .submit:hover{
+            color: orange;
+        }
+        
+    </style>
+</head>
+<body>
+   <h1>Chapter # 5 , Task # 3</h1>
+   <br>
+    <p>Purchase your tickets online! </p>
+    <br>
+<ul>
+
+  <li>RS-600 - per ticket rate</li>
+   <br>
+</ul>
+
+<label class="qaunt">Quantity: </label><input type="text" id="quantityAdult" value="0"> <label>Adult</label>
+<br><br>
+<button type="submit" style="background: red" id="submitButton" class="submit">Submit</button>
+
+<p id="totalPrice"></p>
+<br><br>
+<!--------TEMPRATURE CONVERSION----------->
+ <h1>Chapter # 5 , Task # 5</h1>
+<section id="temp">
+<h1><i class="fa fa-thermometer-empty" aria-hidden="true"></i> Convert Farenheit  to  Celcius(°C to °F)   <i class="fa fa-thermometer-empty" aria-hidden="true"></i> </h1>
+
+<div>
+  <br>
+  <input type="number" name="" placeholder="Enter Farenheit Degree" 
+  id="fd"> 
+  <button onclick="changeDeg()"> Change to Celcius </button>
+  <input type="text" name="" placeholder="Degree in Celcius"
+  id="cd" >
+</div>
+<h1><i class="fa fa-thermometer-empty" aria-hidden="true"></i> Convert Farenheit  to  Celcius(°F to °C)   <i class="fa fa-thermometer-empty" aria-hidden="true"></i> </h1>
+
+<div>
+  <br>
+  <input type="number" name="" placeholder="Enter celsius Degree" 
+  id="cd"> 
+  <button onclick="changeDegree()" style="background: aqua;"> Change to Farenheit </button>
+  <input type="text" name="" placeholder="Degree in farenhite"
+  id="fd" >
+</div>
+</section>
+
+<section id="cart">
+ <h1>Chapter # 5 , Task # 6</h1>
+ <p>Write a program to implement checkout process of a shopping cart system for an e-commerce website</p>
+<br>
+<input type="number" id="total1" placeholder="Enter price of item1">
+<br>
+<input type="number" id="total2" placeholder="Enter quantity of item1">
+<br>
+<input type="number" id="total3" placeholder="Enter price of item2">
+<br>
+<input type="number" id="total4" placeholder="Enter quantity of item1">
+<br>
+<button class="btn bg-aqua" style="background: grey" onclick="cost()">Total cost</button>
+</section>
+<!---------MARKSHEET STARTS------------->
+<section id="marksheet">
+    <h1>Chapter # 5 , Task # 8</h1>
+    <br>
+    <p>Store total marks & marks obtained by a student in 2 variables. Compute the percentage & show the result in your browser </p>
+    <br>
+    <h2>MARKSHEET</h2>
+    <br>
+    <input type="number" id="totalMarks" placeholder="Enter your total marks">
+    <br>
+    <input type="number" id="obtainedMarks" placeholder="Enter your Obtained Marks">
+    <br>
+    <button class="btn ba-aqua" style="background: orange" onclick="marks()">Percentage</button>
+</section>
+<!---------MARKSHEET ENDS------------->
+
+
+<!---------CURRENCY CONVERTER STARTS------------->
+<section>
+   <h1>Chapter # 5 , Task # 9</h1>
+    <br>
+    <p>Assume we have 10 US dollars & 25 Saudi Riyals. Write a script to convert the total currency to Pakistani Rupees. Perform all calculations in a single expression. </p><br>
+    <input type="number" id="sodiRiyal" placeholder="Enter SoudiRiyal">
+    <br>
+    <input type="number" id="US" placeholder="Enter US Doller">
+    <br>
+    <button class="btn bg-orange!important" style="background: black" onclick="pkr()">Convert to PKR</button>
+</section>
+<br><br>
+<!---------CURRENCY CONVERTER ENDS------------->
+
+<!--
+<section>
+<br><br>
+ <h1 style="color: red">Chapter # 5 , Task # 11</h1>
+    <br>
+<p>Perform all calculations in a single expression .</p>
+<br>
+<p id="demo"></p>
+</section>
+<br><br>
+-->
+</body>
+<script src="app5.js">
+    
+    </script>
+</html>
